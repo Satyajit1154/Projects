@@ -1,0 +1,119 @@
+#root{
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.search input {
+  padding: 12px 14px;
+  width: 260px;
+  max-width: 65%;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #262833;
+  border: 1px solid #555b70;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.search input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.search button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.search button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Styles the weather information card */
+
+.weather-card {
+  max-width: 360px;
+  margin: 30px auto;
+  padding: 30px 24px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e3a5f;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Styles the main temperature */
+.weather-card h3 {
+  font-size: 36px; /* Makes the temperature stand out */
+  margin: 12px 0; /* Adds vertical spacing */
+}
+
+/* Styles the details inside the card */
+.weather-card p {
+  margin: 8px 0; /* Adds space above and below each paragraph */
+}
+
+
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 600px) {
+  .app {
+    padding: 28px 16px;
+  }
+
+  .app h1 {
+    font-size: 32px;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .weather-card {
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    padding: 24px 16px;
+  }
+
+  .weather-card h3 {
+    font-size: 32px;
+  }
+}
