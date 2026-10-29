@@ -117,7 +117,15 @@ const pendingCount = tasks.filter(
           checked={task.completed}
           onChange={()=>handleToggleTask(task.id)}
         />
-        <span>{task.text}</span>
+       
+        <span
+          style={{
+            textDecoration: task.completed ? 'line-through' : 'none'
+          }}
+        >
+          {task.text}
+        </span>
+
         
         <button onClick={() => handleDeleteTask(task.id)}>
           Delete

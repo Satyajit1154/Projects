@@ -11,12 +11,7 @@ function App(){
   console.log('Weather App started');
 }, [searchedCity]);
 
-  const weather = {
-  temperature: 29,
-  condition: 'Sunny',
-  humidity: 65,
-  windSpeed: 12
-};
+  
 
  async function handleSearch(){
     if(city.trim()===''){
@@ -65,6 +60,8 @@ async function findCity() {
 
   } catch (error) {
     console.log('Something went wrong:', error.message);
+    setError(error.message);
+    setIsLoading(false);
   }
 }
 
@@ -120,7 +117,9 @@ function getWeatherCondition(code) {
 
       {isLoading && <p>Loading weather...</p>}
       {error && <p>{error}</p>}
-      {searchedCity !== '' && (
+
+
+      {searchedCity !== '' && searchedCity !== '' &&(
       <div className="weather-card">
       <h2>Weather in {searchedCity}</h2>
 
